@@ -1,36 +1,169 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 Dashboard Notes
 
-## Getting Started
+A premium collaborative dashboard note management system built with modern frontend architecture and modular design.
 
-First, run the development server:
+---
+
+## 🚀 Overview
+
+**Dashboard Notes** is a fully client-side collaborative note management system featuring rich text editing, multi-user simulation, public/private visibility controls, and export functionality — all without requiring a backend.
+
+Designed with scalability and clean architecture in mind.
+
+---
+
+## ✨ Features
+
+- 🔐 Multi-user login (email-based simulation)
+- 🗂 Private and Public notes
+- 🌍 Public notes permission control:
+  - View-only
+  - Editable by everyone
+- ✏️ Create / Edit / Delete notes
+- 🖋 Rich Text Editor (Tiptap)
+- 📄 TXT export
+- 🖨 Simple PDF export (print-based)
+- 🌗 Dark / Light theme toggle
+- 🧩 Fully modular component structure
+- 💾 LocalStorage-based persistence
+- 🚫 No backend required
+
+---
+
+## 🏗 Tech Stack
+
+| Technology      | Version |
+|-----------------|----------|
+| Next.js         | 15.x (App Router) |
+| React           | 19.x |
+| TypeScript      | ^5 |
+| Tailwind CSS    | 3.4.1 |
+| PostCSS         | ^8 |
+| Tiptap          | Latest |
+| UUID            | Latest |
+
+---
+
+## 📦 Installation
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/amareshwar3/dashboard-notes.git
+cd dashboard-notes
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠 Manual Setup (From Scratch)
 
-To learn more about Next.js, take a look at the following resources:
+### Create Project
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx create-next-app@latest dashboard-notes
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Select:
 
-## Deploy on Vercel
+- ✅ TypeScript  
+- ✅ App Router  
+- ✅ Tailwind  
+- ✅ ESLint  
+- ❌ No `src` directory  
+- ❌ No Turbopack  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Install Required Packages
+
+```bash
+npm install uuid react-icons
+
+npm install @tiptap/react @tiptap/starter-kit
+npm install @tiptap/extension-heading
+npm install @tiptap/extension-list
+npm install @tiptap/extension-bullet-list
+npm install @tiptap/extension-highlight
+npm install @tiptap/extension-color
+npm install @tiptap/extension-text-align
+npm install @tiptap/extension-image
+npm install @tiptap/extension-task-list
+npm install @tiptap/extension-task-item
+npm install @tiptap/extension-placeholder
+npm install @tiptap/extension-text-style
+npm install @tiptap/extension-focus
+npm install @tiptap/extension-superscript
+npm install @tiptap/extension-subscript
+```
+
+---
+
+## 🎨 Tailwind Configuration
+
+`tailwind.config.ts`
+
+```ts
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  darkMode: "class",
+  content: [
+    "./app/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+export default config;
+```
+
+---
+
+## 📂 Project Structure
+
+```
+app/
+  dashboard/
+    notes/
+components/
+  notes/
+context/
+lib/
+```
+
+- Modular architecture
+- Reusable UI components
+- Clear separation of concerns
+- Enterprise-ready scalability
+
+---
+
+## 🔐 Authentication
+
+### Current Implementation
+
+- Email-based mock login
+- Stored in localStorage
+- Multi-user simulation
+- Session-based context management
