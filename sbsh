@@ -1,0 +1,42 @@
+**Task 3**
+
+We have a map of an area where two square solar power plants are planned to be built. The map is given as a rectangular matrix A of boolean values. A[R][C] is `true` if a place in the R-th row and C-th column can be covered by a solar power plant and `false` if it is not possible.
+
+Each solar power plant must be built in a square shape. Note that a single cell is sufficient for a valid solar power plant. Solar power plants cannot share any cells and should be of the same size.
+
+What is the area of each of the two biggest solar power plants that can be built?
+
+Write a function:
+
+`int solution(vector< vector<bool> > &A);`
+
+that, given a matrix A consisting of N rows and M columns, returns the area of the largest possible solar power plants that can be built in a square shape. If no two square solar power plants can be built, the function should return 0.
+
+**Examples:**
+
+**1.** Given the 4 × 4 map shown in the figure below, the function should return 4. Cells on which the solar power plant can be built are coloured white and cells that are unavailable are coloured black. Two solar power plants are hatched. The area of each power plant is equal to 4, as they each occupy four cells.
+
+- A[0][0] = `false`, A[0][1] = `true`, A[0][2] = `false`, A[0][3] = `true`
+- A[1][0] = `true`, A[1][1] = `true`, A[1][2] = `true`, A[1][3] = `false`
+- A[2][0] = `true`, A[2][1] = `true`, A[2][3] = `true` (A[2][2] is not visible in the photo)
+- A[3][0] = `false`, A[3][1] = `true`, A[3][2] = `true`, A[3][3] = `true`
+
+**2.** Given the 6 × 4 map shown in the figure below, the function should return 9.
+
+- Every cell is `true`. That is A[r][c] = `true` for all rows r = 0 to 5 and columns c = 0 to 3 (24 cells in total).
+- The figure shows two hatched squares, one in the upper part and one in the lower part of the grid.
+
+**3.** Given the 3 × 5 map shown in the figure below, the function should return 0. It is impossible to build two solar power plants.
+
+- Row 0: A[0][0] = `false`, A[0][1] = `false`, A[0][2] = `false`, A[0][3] = `false`, A[0][4] = `false`
+- Row 1: A[1][0] = `false`, A[1][1] = `false`, A[1][2] = `true`, A[1][3] = `false`, A[1][4] = `false`
+- Row 2: A[2][0] = `false`, A[2][1] = `false`, A[2][2] = `false`, A[2][3] = `false`, A[2][4] = `false`
+- The figure shows a single white cell at row 1, column 2, and every other cell is black.
+
+**Write an efficient algorithm for the following assumptions:**
+
+- N and M are integers within the range [1..700].
+
+*Copyright 2009–2026 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.*
+
+The editor template in the first photo only has the starter comments and the empty `solution(vector<vector<bool>> &A)` function body.
